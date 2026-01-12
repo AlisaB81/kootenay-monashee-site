@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="referrer" content="no-referrer" />
+		<title>EDA - Home</title>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<header id="top" class="site-header">
+			<div class="container header-inner">
+				<div class="branding">
+					<!-- Local logo: place the official PNG at assets/img/logo.png to use the real image. -->
+					<img
+						src="assets/img/logo.png"
+						alt="Kootenay-Monashee EDA logo"
+						class="logo"
+					/>
+					<h1 class="site-title">Kootenay-Monashee EDA</h1>
+				</div>
+
+				<button
+					class="nav-toggle"
+					aria-expanded="false"
+					aria-controls="site-nav"
+				>
+					Menu
+				</button>
+
+				<nav id="site-nav" class="site-nav" aria-label="Primary">
+					<ul>
+						<!-- Single page site: buttons point to external links. Replace placeholders with real URLs when available. -->
+						<li><a class="btn" href="#top">Home</a></li>
+						<!-- TODO: replace '#' with your volunteer external signup URL -->
+						<li>
+							<button
+								class="btn"
+								id="open-volunteer"
+								aria-haspopup="dialog"
+								aria-controls="volunteer-modal"
+							>
+								Volunteer
+							</button>
+						</li>
+						<!-- Donate uses provided external URL and opens in a new tab -->
+						<li>
+							<a
+								class="btn primary"
+								href="https://conservativebc.ca/mla/kootenay-monashee/#donate"
+								target="_blank"
+								rel="noopener noreferrer"
+								>Donate</a
+							>
+						</li>
+						<li>
+							<a
+								class="btn membership"
+								href="https://conservativebc.ca/membership/"
+								target="_blank"
+								rel="noopener noreferrer"
+								>Membership</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="container">
+			<section class="hero">
+				<img
+					src="assets/img/Monashee-Mountains.jpg"
+					alt=""
+					aria-hidden="true"
+					class="hero-decorative"
+					loading="lazy"
+				/>
+				<h2>Welcome to the Kootenay-Monashee Electoral District Association</h2>
+			</section>
+			<section class="mission" aria-labelledby="mission-statement">
+				<h3 id="mission-statement">Mission Statement</h3>
+				<div class="mission-card">
+					<p>
+						The Conservative Kootenay Monashee Electoral District is a grass
+						roots movement of the people to restore strong leadership in our
+						province's political sphere and to live up to our potential as an
+						economic leader while maintaining high environmental standards. We
+						want to get back to why people live here; to prosper, to enjoy, and
+						to belong.
+					</p>
+					<h4>Purpose</h4>
+					<p>
+						Our Mission is to restore the Kootenay's economic and social
+						prosperity. Change needs to happen and we want healthy communities
+						to thrive again in our region.
+					</p>
+					<h4>Values</h4>
+					<p>
+						The Kootenay-Monashee EDA is committed to the guiding principles of
+						the BC Conservative's common sense approaches to managing our
+						economics, health care, and communities. We value the livelihoods of
+						our community members and want to increase the quality of life and
+						living standards for the people of this province.
+					</p>
+					<h4>Goals</h4>
+					<p>
+						Our goals are to remove the red tape and promote economic
+						development, responsibly manage tax payer money, give hope and
+						provide resources to the vulnerable in our communities, provide
+						timely and exceptional health care, and ensure personal rights to
+						property and land.
+					</p>
+				</div>
+			</section>
+
+			<!-- Volunteer form modal (hidden until opened) -->
+			<div
+				class="volunteer-modal-overlay"
+				id="volunteer-modal"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="volunteer-heading"
+				hidden
+			>
+				<div class="volunteer-modal" role="document">
+					<header class="volunteer-modal-header">
+						<h3 id="volunteer-heading">Volunteer</h3>
+						<button
+							class="volunteer-modal-close"
+							aria-label="Close volunteer form"
+						>
+							&times;
+						</button>
+					</header>
+					<!--
+					  DEV NOTE: This form is intentionally submitted natively to Formspree so
+					  that Formspree's server-side "Email" Action reliably triggers and
+					  sends to president@kootenaymonashee.ca. We avoid AJAX submission for
+					  this form to ensure provider-side actions execute. Do not
+					  preventDefault() on valid submits.
+					-->
+					<form
+						id="volunteer-form"
+						class="form"
+						action="https://formspree.io/f/xbdlnear"
+						method="post"
+					>
+						<div class="form-row">
+							<label for="vol-name">Full name</label>
+							<input
+								id="vol-name"
+								name="name"
+								type="text"
+								required
+								placeholder="Your full name"
+							/>
+						</div>
+						<div class="form-row">
+							<label for="vol-email">Email</label>
+							<input
+								id="vol-email"
+								name="email"
+								type="email"
+								required
+								placeholder="you@example.com"
+							/>
+						</div>
+						<div class="form-row">
+							<label for="vol-phone"
+								>Phone <span aria-hidden="true">*</span></label
+							>
+							<input
+								id="vol-phone"
+								name="phone"
+								type="tel"
+								required
+								placeholder="(555) 555-5555"
+							/>
+						</div>
+						<div class="form-row role-options">
+							<fieldset>
+								<legend>Volunteer role (optional)</legend>
+								<label
+									><input
+										type="radio"
+										name="volunteer_role"
+										value="Volunteer"
+									/>
+									Volunteer</label
+								>
+								<label
+									><input
+										type="radio"
+										name="volunteer_role"
+										value="Volunteer driver"
+									/>
+									Volunteer driver</label
+								>
+								<label
+									><input
+										type="radio"
+										name="role"
+										value="Volunteer door knocker"
+									/>
+									Volunteer door knocker</label
+								>
+								<label
+									><input
+										type="radio"
+										name="volunteer_role"
+										value="Volunteer caller"
+									/>
+									Volunteer caller</label
+								>
+								<label
+									><input
+										type="radio"
+										name="role"
+										value="Volunteer lawn signs"
+									/>
+									Volunteer lawn signs</label
+								>
+							</fieldset>
+						</div>
+						<div class="form-row">
+							<label for="vol-address">Address (optional)</label>
+							<textarea
+								id="vol-address"
+								name="address"
+								rows="4"
+								placeholder="Your mailing address (optional)"
+							></textarea>
+						</div>
+						<div class="form-row">
+							<label for="vol-note">Note (optional)</label>
+							<textarea
+								id="vol-note"
+								name="note"
+								rows="4"
+								placeholder="Tell us a bit about how you'd like to help"
+							></textarea>
+						</div>
+						<!-- Honeypot anti-spam field: leave empty -->
+						<div class="visually-hidden" aria-hidden="true">
+							<label for="vol-gotcha">Leave this field blank</label>
+							<input
+								id="vol-gotcha"
+								name="_gotcha"
+								type="text"
+								tabindex="-1"
+								autocomplete="off"
+							/>
+						</div>
+						<div class="form-actions">
+							<button class="btn" type="submit">Send</button>
+							<button class="btn" type="reset">Reset</button>
+						</div>
+						<p
+							id="volunteer-success"
+							class="muted"
+							aria-live="polite"
+							hidden
+						></p>
+					</form>
+				</div>
+			</div>
+			<section class="location" aria-labelledby="office-location">
+				<h3 id="location">Location</h3>
+				<div class="office-location">
+					<article class="event-card">
+						<h4>Visit Our Office</h4>
+						<p class="meta">Open Tuesday to Thursday 9:00 am to 3:00 pm</p>
+						<p class="desc">
+							Come and see us in person at 954 Eldorado, Trail, BC. We look
+							forward to seeing you.
+						</p>
+					</article>
+				</div>
+			</section>
+			
+			<section class="president" aria-labelledby="meet-president">
+	<h3 id="meet-president">Meet Our President</h3>
+
+	<div class="president-card">
+		<div class="president-photo">
+			<img
+				src="assets/img/courtney.jpg"
+				alt="Courtenay Heetebrij, President of the Kootenay-Monashee EDA"
+				loading="lazy"
+			/>
+		</div>
+
+		<div class="president-bio">
+			<h4>Courtenay Heetebrij</h4>
+			<p class="meta muted">President, Kootenay-Monashee EDA</p>
+
+			<p class="desc">
+				Courtenay Heetebrij has called Castlegar home for the past eight years.
+				She studied at Selkirk College before completing her education at the
+				British Columbia Institute of Technology (BCIT), where she earned a
+				Bachelor of Science in Ecological Restoration.
+			</p>
+
+			<p class="desc">
+				With eight years of experience in the environmental sector, Courtenay
+				brings a strong background in stewardship, problem-solving, and community
+				engagement. She is also a dedicated homeschool parent and an active
+				volunteer with the Pass Creek Fall Fair Society and New Life Church.
+			</p>
+
+			<p class="desc">
+				In addition, Courtenay serves her community as a firefighter and Training
+				Officer with the Pass Creek Fire Hall, demonstrating a strong commitment
+				to public service, leadership, and community safety.
+			</p>
+		</div>
+	</div>
+</section>
+
+
+
+
+			<section class="events" aria-labelledby="upcoming-events">
+				<h3 id="upcoming-events">Upcoming events</h3>
+				<div class="event-list">
+					<article class="event-card">
+						<h4>No Scheduled events at this time</h4>
+						<p class="meta"></p> <!-- insert date and time here -->
+						<p class="desc">
+							<!-- insert details here -->
+						</p>
+					</article>
+				</div>
+			</section>
+		</main>
+		<!-- Social links (placeholders). Replace href='#' with real social URLs and remove data-external-placeholder attribute. -->
+		<div class="social-links" aria-label="Social links">
+			<a
+				href="https://www.facebook.com/people/Kootenay-Monashee-Conservative-Party/61585892372930/?mibextid=wwXIfr&rdid=fX987BAg1UmA6rBD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BdPgTR8d3%2F%3Fmibextid%3DwwXIfr"
+				data-external-placeholder="facebook"
+				aria-label="Facebook"
+				title="Facebook"
+			>
+				<!-- Facebook SVG -->
+				<span style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem"
+					>Follow us on Facebook</span
+				>
+				<svg
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false"
+					width="54"
+					height="54"
+				>
+					<path
+						d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.2v-2.9h2.2V9.3c0-2.2 1.3-3.4 3.3-3.4.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12"
+					/>
+				</svg>
+			</a>
+		</div>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p>
+					Contact:
+					<a href="mailto:president@kootenaymonashee.ca"
+						>president@kootenaymonashee.ca</a
+					>
+				</p>
+				<p class="footer-address">
+					<a
+						href="https://www.google.com/maps/search/?api=1&query=954+Eldorado+Trail+BC"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Open 954 Eldorado, Trail, BC in Google Maps"
+					>
+						<svg
+							class="icon icon-pin"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+							focusable="false"
+							width="16"
+							height="16"
+						>
+							<path
+								d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
+							/>
+						</svg>
+						<span>954 Eldorado, Trail, BC</span>
+					</a>
+				</p>
+				<p>
+					&copy; <span id="year"></span> Kootenay-Monashee EDA. All rights
+					reserved.
+				</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/main.js" defer></script>
+	</body>
+</html>
