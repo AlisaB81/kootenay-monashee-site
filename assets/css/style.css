@@ -5,7 +5,7 @@
 */
 
 :root{
-  --bg:#ffffff;
+  --bg:#f7f7fa;
   --surface:#ffffff;
   --nav-bg:#0f122e;
   --primary:#0f122e;
@@ -92,13 +92,6 @@ body{
   overflow:hidden;
   text-align:center;
 }
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(15,18,46,0.64);
-  pointer-events:none;
-}
 .hero > *{position:relative; z-index:1}
 .hero > .hero-decorative{display:none}
 .hero h2{font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
@@ -109,10 +102,19 @@ body{
 .btn.primary{background:var(--donate);color:var(--primary);border-color:var(--donate)}
 .btn.membership{background:var(--surface);color:var(--nav-bg);border:1px solid rgba(0,0,0,0.08)}
 
-/* Keep header links light and emphasize actions with the reference gold. */
-.site-header .btn{background:transparent;color:var(--primary-contrast);border:none}
+/* Match the reference header's plain navigation and gold action buttons. */
+.site-header .btn{
+  background:transparent;
+  color:var(--primary-contrast);
+  border:none;
+  border-radius:5px;
+}
 .site-header .btn.primary,
-.site-header .btn.membership{background:var(--accent);color:var(--nav-bg)}
+.site-header .btn.membership{
+  background:var(--accent);
+  color:var(--nav-bg);
+  padding:.65rem 1.1rem;
+}
 
 .events{margin:2rem 0}
 .event-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
