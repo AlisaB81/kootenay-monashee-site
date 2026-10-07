@@ -98,12 +98,13 @@ body{
 }
 .hero > *{position:relative; z-index:1}
 .hero > .hero-decorative{display:none}
-.hero h2{font-weight:700;text-shadow:none}
+.hero h2{font-weight:700;color:var(--primary);text-shadow:none}
 .hero .lede{color:#eef6ff;max-width:60ch;margin:0 auto;text-shadow:0 1px 4px rgba(0,0,0,0.45);background:rgba(0,0,0,0.06);padding:.4rem .6rem;border-radius:6px}
 .hero-actions{margin-top:1rem;display:flex;gap:.5rem;justify-content:center}
 
 .btn{display:inline-block;padding:.6rem .9rem;border-radius:6px;background:var(--surface);border:1px solid rgba(0,0,0,0.08);color:var(--nav-bg);text-decoration:none}
 .btn.primary{background:var(--donate);color:var(--primary);border-color:var(--donate)}
+.btn.candidate-link{background:var(--accent);color:var(--nav-bg);border-color:var(--accent)}
 .btn.membership{background:var(--surface);color:var(--nav-bg);border:1px solid rgba(0,0,0,0.08)}
 
 /* Match the reference header's plain navigation and gold action buttons. */
