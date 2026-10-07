@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				body += 'Address: ' + address + '\r\n\r\n';
 
 				const mailto =
-					'mailto:president@kootenaymonashee.ca?subject=' +
+					'mailto:stephen.hill@1bc.ca?subject=' +
 					encodeURIComponent(subject) +
 					'&body=' +
 					encodeURIComponent(body);
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				if (successEl) {
 					successEl.textContent =
-						'Your email client should open to send this message to president@kootenaymonashee.ca. If it does not, please send your details to that address manually.';
+						'Your email client should open to send this message to stephen.hill@1bc.ca. If it does not, please send your details to that address manually.';
 					successEl.hidden = false;
 				}
 

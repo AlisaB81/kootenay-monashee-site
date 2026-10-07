@@ -1,19 +1,19 @@
 /* Shared stylesheet for EDA static site
-   - Conservative blue palette
+   - Navy and gold palette inspired by 1BC
    - Responsive layout using simple CSS (no frameworks)
    - Accessible focus styles
 */
 
 :root{
-  /* Conservative BC inspired palette */
-  --bg:#f5f8fb;
+  --bg:#ffffff;
   --surface:#ffffff;
-  --nav-bg:#002957; /* deep navy background */
-  --primary:#002957; /* primary deep blue */
+  --nav-bg:#0f122e;
+  --primary:#0f122e;
   --primary-contrast:#ffffff;
-  --muted:#6b7785;
-  --accent:#ffc72c; /* gold accent */
-  --donate:#c82333; /* donate red */
+  --muted:#646875;
+  --accent:#d1a45d;
+  --donate:#d1a45d;
+  --border:#e6e6eb;
   --max-width:1000px;
 }
 
@@ -22,8 +22,8 @@ html,body{height:100%}
 body{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--nav-bg); /* entire background dark blue */
-  color:var(--primary-contrast); /* white text on dark bg */
+  background:var(--bg);
+  color:var(--primary);
   line-height:1.4;
 }
 
@@ -56,7 +56,7 @@ body{
   padding-left:1rem;
   z-index:2;
 }
-.logo{width:240px;height:auto;max-width:40vw;object-fit:contain}
+.logo{width:150px;height:auto;max-width:40vw;object-fit:contain}
 .site-title{font-size:1.3rem;margin:0;color:var(--primary-contrast);font-weight:700;padding-left:0.8rem}
 
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
@@ -96,7 +96,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,41,87,0.64); /* stronger translucent overlay for better contrast */
+  background: rgba(15,18,46,0.64);
   pointer-events:none;
 }
 .hero > *{position:relative; z-index:1}
@@ -106,24 +106,25 @@ body{
 .hero-actions{margin-top:1rem;display:flex;gap:.5rem;justify-content:center}
 
 .btn{display:inline-block;padding:.6rem .9rem;border-radius:6px;background:var(--surface);border:1px solid rgba(0,0,0,0.08);color:var(--nav-bg);text-decoration:none}
-.btn.primary{background:var(--donate);color:var(--primary-contrast);border-color:var(--donate)}
+.btn.primary{background:var(--donate);color:var(--primary);border-color:var(--donate)}
 .btn.membership{background:var(--surface);color:var(--nav-bg);border:1px solid rgba(0,0,0,0.08)}
 
-/* make non-donate buttons white on deep blue header */
-.site-header .btn{background:#ffffff;color:var(--nav-bg);border:none}
-.site-header .btn.primary{background:var(--donate);color:#fff}
+/* Keep header links light and emphasize actions with the reference gold. */
+.site-header .btn{background:transparent;color:var(--primary-contrast);border:none}
+.site-header .btn.primary,
+.site-header .btn.membership{background:var(--accent);color:var(--nav-bg)}
 
 .events{margin:2rem 0}
 .event-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.event-card{background:var(--surface);padding:1rem;border-radius:8px;border:1px solid #e6eef6;color:#0b2540}
+.event-card{background:var(--surface);padding:1rem;border-radius:8px;border:1px solid var(--border);color:var(--primary)}
 .event-card h4{margin:.25rem 0}
 .meta{font-size:.9rem;color:var(--muted)}
 
 /* Mission card */
 .mission{margin:2rem 0}
-.mission-card{background:var(--surface);padding:1.25rem;border-radius:10px;border:1px solid #e6eef6;color:#0b2540;box-shadow:0 6px 18px rgba(11,37,70,0.06)}
+.mission-card{background:var(--surface);padding:1.25rem;border-radius:10px;border:1px solid var(--border);color:var(--primary);box-shadow:0 6px 18px rgba(15,18,46,0.06)}
 .mission-card h4{margin:0.6rem 0 0.3rem;font-size:1rem}
-.mission-card p{margin:0.3rem 0;line-height:1.6;color:#0b2540}
+.mission-card p{margin:0.3rem 0;line-height:1.6;color:var(--primary)}
 
 @media (max-width:720px){
   .mission-card{padding:1rem}
@@ -141,8 +142,8 @@ body{
   background:var(--surface);
   padding:1.5rem;
   border-radius:10px;
-  border:1px solid #e6eef6;
-  color:#0b2540;
+  border:1px solid var(--border);
+  color:var(--primary);
 }
 
 /* Photo container */
@@ -151,7 +152,7 @@ body{
   height:180px;
   border-radius:14px; /* rounded edges */
   overflow:hidden;
-  background:linear-gradient(180deg, #eaf2fb, #ffffff);
+  background:linear-gradient(180deg, #f3eee5, #ffffff);
 }
 
 /* Image behavior */
@@ -166,7 +167,7 @@ body{
 /* Text */
 .president-bio h4{margin:0 0 .25rem;font-size:1.1rem}
 .president-bio .meta{font-size:.95rem;color:var(--muted);margin-bottom:.75rem}
-.president-bio .desc{margin:.5rem 0 0;line-height:1.55;color:#0b2540}
+.president-bio .desc{margin:.5rem 0 0;line-height:1.55;color:var(--primary)}
 .president-bio .desc:first-of-type{margin-top:0}
 
 /* Mobile */
@@ -219,24 +220,24 @@ body{
   background:var(--surface);
   padding:1.25rem;
   border-radius:8px;
-  border:1px solid #e6eef6;
-  color:#0b2540;
-  box-shadow:0 6px 18px rgba(11,37,70,0.04);
+  border:1px solid var(--border);
+  color:var(--primary);
+  box-shadow:0 6px 18px rgba(15,18,46,0.04);
 }
 .form-row{margin-bottom:1rem;display:flex;flex-direction:column;gap:.35rem}
-.form label{font-weight:600;font-size:.95rem;margin:0;color:#0b2540}
+.form label{font-weight:600;font-size:.95rem;margin:0;color:var(--primary)}
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="tel"],
 .form textarea,
 .form select{
   padding:.65rem;
-  border:1px solid #cfe0f2;
+  border:1px solid #d8d9df;
   border-radius:6px;
   width:100%;
   box-sizing:border-box;
   background:#fff;
-  color:#0b2540;
+  color:var(--primary);
 }
 textarea{resize:vertical;min-height:88px}
 .form-actions{display:flex;gap:.5rem;margin-top:1rem;justify-content:flex-end;flex-wrap:wrap}
@@ -246,7 +247,7 @@ textarea{resize:vertical;min-height:88px}
 /* Fieldset / role options */
 .role-options fieldset{margin:0;padding:0}
 .role-options legend{font-weight:700;margin-bottom:.5rem}
-.role-options label{display:inline-flex;align-items:center;gap:.4rem;margin-right:0.9rem;font-weight:500;color:#0b2540}
+.role-options label{display:inline-flex;align-items:center;gap:.4rem;margin-right:0.9rem;font-weight:500;color:var(--primary)}
 
 /* Modal header spacing */
 .volunteer-modal-header{
@@ -256,7 +257,7 @@ textarea{resize:vertical;min-height:88px}
   gap:1rem;
   margin-bottom:.75rem;
   padding-bottom:.5rem;
-  border-bottom:1px solid #eef6fb;
+  border-bottom:1px solid var(--border);
 }
 
 #volunteer-success{margin-top:.75rem;color:var(--muted)}
@@ -281,9 +282,9 @@ textarea{resize:vertical;min-height:88px}
   width:100%;
   border-radius:10px;
   padding:1.25rem;
-  border:1px solid #e6eef6;
-  box-shadow:0 12px 30px rgba(11,37,70,0.12);
-  color:#0b2540;
+  border:1px solid var(--border);
+  box-shadow:0 12px 30px rgba(15,18,46,0.12);
+  color:var(--primary);
   max-height:calc(100vh - 2rem); /* fit on small screens */
   overflow:auto; /* scroll modal content if needed */
 }
@@ -298,16 +299,16 @@ textarea{resize:vertical;min-height:88px}
 }
 .volunteer-modal .form-row{margin-bottom:.75rem}
 .volunteer-modal fieldset{border:0;padding:0;margin:0}
-.volunteer-modal .role-options label{display:inline-flex;align-items:center;gap:.4rem;margin-right:0.9rem;font-weight:500;color:#0b2540}
+.volunteer-modal .role-options label{display:inline-flex;align-items:center;gap:.4rem;margin-right:0.9rem;font-weight:500;color:var(--primary)}
 .volunteer-modal .role-options input{transform:translateY(1px)}
 
 /* Explicit form label and input colors to ensure visibility */
-.form label{color:#0b2540}
-.form input, .form textarea, .form select{color:#0b2540}
-.form input::placeholder, .form textarea::placeholder{color:#6b7785}
+.form label{color:var(--primary)}
+.form input, .form textarea, .form select{color:var(--primary)}
+.form input::placeholder, .form textarea::placeholder{color:var(--muted)}
 
 /* Accessibility */
-a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(11,79,140,.16);outline-offset:2px}
+a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(209,164,93,.45);outline-offset:2px}
 
 /* Utility: visually hidden (accessible) */
 .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
@@ -359,7 +360,7 @@ a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(11,79,140
     text-align:center;
   }
 
-  .logo{width:140px}
+  .logo{width:105px}
   .site-title{font-size:1rem;padding-left:0.4rem}
 
   /* Form / modal padding and buttons on small screens */

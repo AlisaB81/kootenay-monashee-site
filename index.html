@@ -11,10 +11,9 @@
 		<header id="top" class="site-header">
 			<div class="container header-inner">
 				<div class="branding">
-					<!-- Local logo: place the official PNG at assets/img/logo.png to use the real image. -->
 					<img
-						src="assets/img/logo.png"
-						alt="Kootenay-Monashee EDA logo"
+						src="assets/img/onebc-logo.png"
+						alt="OneBC"
 						class="logo"
 					/>
 					<h1 class="site-title">Kootenay-Monashee EDA</h1>
@@ -43,11 +42,11 @@
 								Volunteer
 							</button>
 						</li>
-						<!-- Donate uses provided external URL and opens in a new tab -->
+						<!-- Donations go to the OneBC candidate funds page. -->
 						<li>
 							<a
 								class="btn primary"
-								href="https://conservativebc.ca/mla/kootenay-monashee/#donate"
+								href="https://action.1bc.ca/candidate-funds?recruiter_id=34743"
 								target="_blank"
 								rel="noopener noreferrer"
 								>Donate</a
@@ -56,10 +55,10 @@
 						<li>
 							<a
 								class="btn membership"
-								href="https://conservativebc.ca/membership/"
+								href="https://1bc.ca/candidates/stephen-hill"
 								target="_blank"
 								rel="noopener noreferrer"
-								>Membership</a
+								>OneBC</a
 							>
 						</li>
 					</ul>
@@ -83,7 +82,7 @@
 				<h3 id="mission-statement">Mission Statement</h3>
 				<div class="mission-card">
 					<p>
-						The Conservative Kootenay Monashee Electoral District is a grass
+						The OneBC Monashee Electoral District is a grass
 						roots movement of the people to restore strong leadership in our
 						province's political sphere and to live up to our potential as an
 						economic leader while maintaining high environmental standards. We
@@ -99,7 +98,7 @@
 					<h4>Values</h4>
 					<p>
 						The Kootenay-Monashee EDA is committed to the guiding principles of
-						the BC Conservative's common sense approaches to managing our
+					    OneBC's approach to managing our
 						economics, health care, and communities. We value the livelihoods of
 						our community members and want to increase the quality of life and
 						living standards for the people of this province.
@@ -137,7 +136,8 @@
 					<!--
 					  DEV NOTE: This form is intentionally submitted natively to Formspree so
 					  that Formspree's server-side "Email" Action reliably triggers and
-					  sends to president@kootenaymonashee.ca. We avoid AJAX submission for
+					  delivers to stephen.hill@1bc.ca. Confirm the recipient in the
+					  Formspree dashboard. We avoid AJAX submission for
 					  this form to ensure provider-side actions execute. Do not
 					  preventDefault() on valid submits.
 					-->
@@ -147,6 +147,10 @@
 						action="https://formspree.io/f/xbdlnear"
 						method="post"
 					>
+						<p>
+							Prefer email?
+							<a href="mailto:stephen.hill@1bc.ca">stephen.hill@1bc.ca</a>
+						</p>
 						<div class="form-row">
 							<label for="vol-name">Full name</label>
 							<input
@@ -281,42 +285,54 @@
 				</div>
 			</section>
 
-			<section class="president" aria-labelledby="meet-president">
-				<h3 id="meet-president">Meet Our President</h3>
+			<section class="candidate" aria-labelledby="meet-candidate">
+				<h3 id="meet-candidate">Meet Our OneBC Candidate</h3>
 
-				<div class="president-card">
-					<div class="president-photo">
+				<div class="candidate-card">
+					<div class="candidate-photo">
 						<img
-							src="assets/img/courtney.jpg"
-							alt="Courtenay Heetebrij, President of the Kootenay-Monashee EDA"
+							src="assets/img/stephen_hill.png"
+							alt="Stephen Hill of the OneBC Kootenay-Monashee EDA"
 							loading="lazy"
 						/>
 					</div>
 
-					<div class="president-bio">
-						<h4>Courtenay Heetebrij</h4>
-						<p class="meta muted">President, Kootenay-Monashee EDA</p>
-
-						<p class="desc">
-							Courtenay Heetebrij has called Castlegar home for the past eight
-							years. She studied at Selkirk College before completing her
-							education at the British Columbia Institute of Technology (BCIT),
-							where she earned a Bachelor of Science in Ecological Restoration.
+					<div class="candidate-bio">
+						<h4>Stephen Hill</h4>
+						<p class="meta muted">Stephen Hill - Candidate for Kootenay-Monashee</p>
+						<p>
+							<a
+								class="btn"
+								href="https://1bc.ca/candidates/stephen-hill"
+								target="_blank"
+								rel="noopener noreferrer"
+								>View Stephen on OneBC</a
+							>
 						</p>
 
 						<p class="desc">
-							With eight years of experience in the environmental sector,
-							Courtenay brings a strong background in stewardship,
-							problem-solving, and community engagement. She is also a dedicated
-							homeschool parent and an active volunteer with the Pass Creek Fall
-							Fair Society and New Life Church.
+							Stephen Hill is your ONEBC candidate for Kootenay–Monashee.
+							For 32 years, Stephen and his wife have called this community
+							home, raising their family and building a successful business.
+							Their life in the Kootenays has been shaped by strong local connections
+							and a shared commitment to giving back.
 						</p>
 
 						<p class="desc">
-							In addition, Courtenay serves her community as a firefighter and
-							Training Officer with the Pass Creek Fire Hall, demonstrating a
-							strong commitment to public service, leadership, and community
-							safety.
+							Community involvement has always been an important part of Stephen’s
+							life. He founded the LeRoi Community Foundation in Trail and was one of
+							the founding members of the Trail Youth Justice Committee. Over the years,
+							he has also served on numerous boards, including Red Mountain Racers,
+							contributing his time and experience to organizations that bring people together
+							and support the community.
+						</p>
+
+						<p class="desc">
+							Now, Stephen is bringing that experience and commitment to his candidacy.
+							As a longtime resident, business owner, and community volunteer, he understands
+							the dedication it takes to build a life here. He looks forward to connecting with
+							residents across Kootenay–Monashee, listening to their concerns, and working toward
+							a strong future for the region he and his family call home.
 						</p>
 					</div>
 				</div>
@@ -327,23 +343,7 @@
 
 				<div class="event-list">
 					<article class="event-card">
-						<h4>Community Meet &amp; Greet + Q&amp;A</h4>
-
-						<p class="meta">
-							<strong>Sunday, March 8, 2026</strong> &nbsp;|&nbsp; <strong>2:00 PM</strong><br>
-							<span>954 Eldorado, Trail, BC</span>
-						</p>
-
-						<p class="desc">
-							Join us for our first event of the year as we welcome community members to connect with the
-							Kootenay–Monashee EDA team. This is an open and inclusive gathering for anyone who would
-							like to ask questions, share feedback, and meet local EDA members.
-							<br><br>
-							Attendees will also have the opportunity to learn how to get involved, sign up to volunteer,
-							purchase a membership, and make a donation in support of our work in the riding.
-							<br><br>
-							We look forward to seeing you there!
-						</p>
+						<h4>To Be Announced Soon</h4>
 					</article>
 				</div>
 			</section>
@@ -380,8 +380,8 @@
 			<div class="container">
 				<p>
 					Contact:
-					<a href="mailto:president@kootenaymonashee.ca"
-						>president@kootenaymonashee.ca</a
+					<a href="mailto:stephen.hill@1bc.ca"
+						>stephen.hill@1bc.ca</a
 					>
 				</p>
 				<p class="footer-address">
