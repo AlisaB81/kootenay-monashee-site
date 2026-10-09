@@ -301,16 +301,26 @@
 					<form
 						id="endorsement-form"
 						class="form"
-						action="mailto:stephen@stephenhill.ca"
-						method="post"
-						enctype="text/plain"
+						action="https://formspree.io/f/xbdlnear"
+						method="POST"
 					>
 						<p>
-							Complete this form to prepare an email to
+							This form is submitted through Formspree, which processes the
+							information you provide. The Formspree endpoint must be configured
+							to deliver submissions to
 							<a href="mailto:stephen@stephenhill.ca">stephen@stephenhill.ca</a>.
-							Your email app will open so you can review and send it; the form
-							does not send or store your information.
 						</p>
+						<input
+							type="hidden"
+							name="_subject"
+							value="Endorsement for Stephen Hill"
+						/>
+						<input
+							type="hidden"
+							name="permission_to_publish"
+							id="endorsement-permission-value"
+							value="No"
+						/>
 						<div class="form-row">
 							<label for="endorsement-name">Full name</label>
 							<input
@@ -337,7 +347,7 @@
 							<label for="endorsement-email">Email</label>
 							<input
 								id="endorsement-email"
-								name="email"
+								name="_replyto"
 								type="email"
 								autocomplete="email"
 								maxlength="254"
@@ -373,7 +383,6 @@
 							<label for="endorsement-permission">
 								<input
 									id="endorsement-permission"
-									name="permission_to_publish"
 									type="checkbox"
 									value="Yes"
 								/>
@@ -382,17 +391,11 @@
 							</label>
 						</div>
 						<div class="form-actions">
-							<button class="btn primary" type="submit">Prepare email</button>
+							<button class="btn primary" type="submit">Submit endorsement</button>
 							<button class="btn" type="button" data-close-endorsement>
 								Cancel
 							</button>
 						</div>
-						<p
-							id="endorsement-status"
-							class="muted"
-							aria-live="polite"
-							hidden
-						></p>
 					</form>
 				</div>
 			</div>
@@ -523,6 +526,6 @@
 			</div>
 		</footer>
 
-		<script src="assets/js/main.js?v=3" defer></script>
+		<script src="assets/js/main.js?v=4" defer></script>
 	</body>
 </html>

@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const endorsementMessageCount = document.getElementById(
 		'endorsement-message-count'
 	);
-	const endorsementStatus = document.getElementById('endorsement-status');
 	let endorsementPreviouslyFocused = null;
 
 	function openEndorsementModal() {
@@ -246,38 +245,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	if (endorsementForm) {
 		endorsementForm.addEventListener('submit', function (e) {
-			e.preventDefault();
 			if (!this.checkValidity()) {
+				e.preventDefault();
 				this.reportValidity();
 				return;
 			}
 
-			const values = new FormData(this);
-			const name = String(values.get('name') || '').trim();
-			const subject = 'Endorsement for Stephen Hill from ' + name;
-			const body = [
-				'Name: ' + name,
-				'Address: ' + String(values.get('address') || '').trim(),
-				'Email: ' + String(values.get('email') || '').trim(),
-				'Phone: ' + String(values.get('phone') || '').trim(),
-				'Permission to publish name and endorsement: ' +
-					(endorsementForm.elements.permission_to_publish.checked ? 'Yes' : 'No'),
-				'',
-				'Message:',
-				String(values.get('message') || '').trim(),
-			].join('\r\n');
-
-			window.location.href =
-				'mailto:stephen@stephenhill.ca?subject=' +
-				encodeURIComponent(subject) +
-				'&body=' +
-				encodeURIComponent(body);
-
-			if (endorsementStatus) {
-				endorsementStatus.textContent =
-					'Your email app should open with this endorsement. Review and send the email there; it has not been sent yet.';
-				endorsementStatus.hidden = false;
-			}
+			const permissionCheckbox = document.getElementById(
+				'endorsement-permission'
+			);
+			const permissionValue = document.getElementById(
+				'endorsement-permission-value'
+			);
+			permissionValue.value = permissionCheckbox.checked ? 'Yes' : 'No';
 		});
 	}
 

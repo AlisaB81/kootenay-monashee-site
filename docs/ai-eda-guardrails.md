@@ -53,10 +53,11 @@ When editing existing files:
 
 ## 4. Forms and third-party services
 
-- For volunteer sign-up forms:
+- For volunteer sign-up and endorsement forms:
   - Use a **trusted, free, and stable form provider** that works with static sites (e.g., Formspree).
   - Use HTTPS endpoints only.
   - Do NOT roll your own backend or send data to unknown services.
+  - Disclose when personal information is processed by the form provider and configure the provider's delivery recipient.
 - Do not add or suggest services that:
   - Sell or share data with unknown third parties.
   - Require embedding opaque tracking scripts.
