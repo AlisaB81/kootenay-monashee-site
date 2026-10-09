@@ -215,6 +215,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		openEndorsementBtn.addEventListener('click', openEndorsementModal);
 	}
 
+	if (window.location.hash === '#endorse-stephen') {
+		openEndorsementModal();
+	}
+
 	if (endorsementModal) {
 		endorsementModal.addEventListener('click', function (e) {
 			if (e.target === endorsementModal) closeEndorsementModal();
