@@ -279,6 +279,124 @@
 				</div>
 			</div>
 
+			<div
+				class="volunteer-modal-overlay endorsement-modal-overlay"
+				id="endorsement-modal"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="endorsement-heading"
+				hidden
+			>
+				<div class="volunteer-modal" role="document">
+					<header class="volunteer-modal-header">
+						<h3 id="endorsement-heading">Endorse Stephen</h3>
+						<button
+							class="volunteer-modal-close"
+							type="button"
+							aria-label="Close endorsement form"
+						>
+							&times;
+						</button>
+					</header>
+					<form
+						id="endorsement-form"
+						class="form"
+						action="mailto:stephen@stephenhill.ca"
+						method="post"
+						enctype="text/plain"
+					>
+						<p>
+							Complete this form to prepare an email to
+							<a href="mailto:stephen@stephenhill.ca">stephen@stephenhill.ca</a>.
+							Your email app will open so you can review and send it; the form
+							does not send or store your information.
+						</p>
+						<div class="form-row">
+							<label for="endorsement-name">Full name</label>
+							<input
+								id="endorsement-name"
+								name="name"
+								type="text"
+								autocomplete="name"
+								maxlength="150"
+								required
+							/>
+						</div>
+						<div class="form-row">
+							<label for="endorsement-address">Address</label>
+							<input
+								id="endorsement-address"
+								name="address"
+								type="text"
+								autocomplete="street-address"
+								maxlength="300"
+								required
+							/>
+						</div>
+						<div class="form-row">
+							<label for="endorsement-email">Email</label>
+							<input
+								id="endorsement-email"
+								name="email"
+								type="email"
+								autocomplete="email"
+								maxlength="254"
+								required
+							/>
+						</div>
+						<div class="form-row">
+							<label for="endorsement-phone">Phone</label>
+							<input
+								id="endorsement-phone"
+								name="phone"
+								type="tel"
+								autocomplete="tel"
+								maxlength="32"
+								required
+							/>
+						</div>
+						<div class="form-row">
+							<label for="endorsement-message">Message</label>
+							<textarea
+								id="endorsement-message"
+								name="message"
+								rows="5"
+								maxlength="1000"
+								aria-describedby="endorsement-message-count"
+								required
+							></textarea>
+							<p id="endorsement-message-count" class="muted" aria-live="polite">
+								1000 characters remaining
+							</p>
+						</div>
+						<div class="form-row">
+							<label for="endorsement-permission">
+								<input
+									id="endorsement-permission"
+									name="permission_to_publish"
+									type="checkbox"
+									value="Yes"
+								/>
+								I give permission for my name and endorsement to appear on
+								Stephen’s campaign website and social media.
+							</label>
+						</div>
+						<div class="form-actions">
+							<button class="btn primary" type="submit">Prepare email</button>
+							<button class="btn" type="button" data-close-endorsement>
+								Cancel
+							</button>
+						</div>
+						<p
+							id="endorsement-status"
+							class="muted"
+							aria-live="polite"
+							hidden
+						></p>
+					</form>
+				</div>
+			</div>
+
 			<section class="location" aria-labelledby="office-location">
 				<h3 id="location">Location</h3>
 				<div class="office-location">
@@ -316,8 +434,19 @@
 								>View Stephen on OneBC</a
 							>
 						</p>
+							<p>
+								<button
+									class="btn candidate-link"
+									id="open-endorsement"
+									type="button"
+									aria-haspopup="dialog"
+									aria-controls="endorsement-modal"
+								>
+									Endorse Stephen
+								</button>
+							</p>
 
-						<p class="desc">
+							<p class="desc">
 							Stephen Hill is your ONEBC candidate for Kootenay–Monashee.
 							For 32 years, Stephen and his wife have called this community
 							home, raising their family and building a successful business.
@@ -394,6 +523,6 @@
 			</div>
 		</footer>
 
-		<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/main.js?v=3" defer></script>
 	</body>
 </html>

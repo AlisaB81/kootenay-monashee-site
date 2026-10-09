@@ -104,7 +104,7 @@ body{
 
 .btn{display:inline-block;padding:.6rem .9rem;border-radius:6px;background:var(--surface);border:1px solid rgba(0,0,0,0.08);color:var(--nav-bg);text-decoration:none}
 .btn.primary{background:var(--donate);color:var(--primary);border-color:var(--donate)}
-.btn.candidate-link{background:var(--accent);color:var(--nav-bg);border-color:var(--accent)}
+.btn.candidate-link{background:var(--accent);color:var(--nav-bg);border-color:var(--accent);font:inherit;cursor:pointer}
 .btn.membership{background:var(--surface);color:var(--nav-bg);border:1px solid rgba(0,0,0,0.08)}
 
 /* Match the reference header's plain navigation and gold action buttons. */

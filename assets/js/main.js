@@ -63,12 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (closeBtn) closeBtn.addEventListener('click', closeVolunteerModal);
 	}
 
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape' && volunteerModal && !volunteerModal.hidden) {
-			closeVolunteerModal();
-		}
-	});
-
 	if (volunteerForm) {
 		volunteerForm.addEventListener('submit', function (e) {
 			const action = (this.getAttribute('action') || '').trim();
@@ -186,6 +180,103 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 
 				setTimeout(closeVolunteerModal, 300);
+			}
+		});
+	}
+
+	const openEndorsementBtn = document.getElementById('open-endorsement');
+	const endorsementModal = document.getElementById('endorsement-modal');
+	const endorsementForm = document.getElementById('endorsement-form');
+	const endorsementMessage = document.getElementById('endorsement-message');
+	const endorsementMessageCount = document.getElementById(
+		'endorsement-message-count'
+	);
+	const endorsementStatus = document.getElementById('endorsement-status');
+	let endorsementPreviouslyFocused = null;
+
+	function openEndorsementModal() {
+		if (!endorsementModal) return;
+		endorsementPreviouslyFocused = document.activeElement;
+		endorsementModal.hidden = false;
+		endorsementModal.classList.add('is-open');
+		document.body.style.overflow = 'hidden';
+		const first = endorsementModal.querySelector('[name="name"]');
+		if (first) first.focus();
+	}
+
+	function closeEndorsementModal() {
+		if (!endorsementModal) return;
+		endorsementModal.hidden = true;
+		endorsementModal.classList.remove('is-open');
+		document.body.style.overflow = '';
+		if (endorsementPreviouslyFocused) endorsementPreviouslyFocused.focus();
+	}
+
+	if (openEndorsementBtn) {
+		openEndorsementBtn.addEventListener('click', openEndorsementModal);
+	}
+
+	if (endorsementModal) {
+		endorsementModal.addEventListener('click', function (e) {
+			if (e.target === endorsementModal) closeEndorsementModal();
+		});
+		const closeBtn = endorsementModal.querySelector('.volunteer-modal-close');
+		const cancelBtn = endorsementModal.querySelector('[data-close-endorsement]');
+		if (closeBtn) closeBtn.addEventListener('click', closeEndorsementModal);
+		if (cancelBtn) cancelBtn.addEventListener('click', closeEndorsementModal);
+	}
+
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') {
+			if (endorsementModal && !endorsementModal.hidden) {
+				closeEndorsementModal();
+			} else if (volunteerModal && !volunteerModal.hidden) {
+				closeVolunteerModal();
+			}
+		}
+	});
+
+	if (endorsementMessage && endorsementMessageCount) {
+		endorsementMessage.addEventListener('input', function () {
+			const remaining = endorsementMessage.maxLength - endorsementMessage.value.length;
+			endorsementMessageCount.textContent =
+				remaining + (remaining === 1 ? ' character remaining' : ' characters remaining');
+		});
+	}
+
+	if (endorsementForm) {
+		endorsementForm.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (!this.checkValidity()) {
+				this.reportValidity();
+				return;
+			}
+
+			const values = new FormData(this);
+			const name = String(values.get('name') || '').trim();
+			const subject = 'Endorsement for Stephen Hill from ' + name;
+			const body = [
+				'Name: ' + name,
+				'Address: ' + String(values.get('address') || '').trim(),
+				'Email: ' + String(values.get('email') || '').trim(),
+				'Phone: ' + String(values.get('phone') || '').trim(),
+				'Permission to publish name and endorsement: ' +
+					(endorsementForm.elements.permission_to_publish.checked ? 'Yes' : 'No'),
+				'',
+				'Message:',
+				String(values.get('message') || '').trim(),
+			].join('\r\n');
+
+			window.location.href =
+				'mailto:stephen@stephenhill.ca?subject=' +
+				encodeURIComponent(subject) +
+				'&body=' +
+				encodeURIComponent(body);
+
+			if (endorsementStatus) {
+				endorsementStatus.textContent =
+					'Your email app should open with this endorsement. Review and send the email there; it has not been sent yet.';
+				endorsementStatus.hidden = false;
 			}
 		});
 	}
