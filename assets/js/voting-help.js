@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (!submissionEndpoint) {
 			status.classList.add('error');
 			status.textContent =
-				'This request form is not connected to a submission service yet. No information has been sent. Please use the Elections BC lookup below.';
+				'This request form is not connected to a submission service yet. No information has been sent. Please try again later or contact the EDA by email.';
 			status.hidden = false;
 			return;
 		}
@@ -148,14 +148,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		} catch {
 			status.classList.add('error');
 			status.textContent =
-				'This request form is not available right now. No information has been sent. Please use the Elections BC lookup below.';
+				'This request form is not available right now. No information has been sent. Please try again later or contact the EDA by email.';
 			status.hidden = false;
 			return;
 		}
 		if (endpoint.protocol !== 'https:') {
 			status.classList.add('error');
 			status.textContent =
-				'This request form is not available right now. No information has been sent. Please use the Elections BC lookup below.';
+				'This request form is not available right now. No information has been sent. Please try again later or contact the EDA by email.';
 			status.hidden = false;
 			return;
 		}
@@ -191,11 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		} catch {
 			status.classList.add('error');
 			status.textContent =
-				'We could not send your request right now. Your entries are still here; please try again later or use the Elections BC lookup below.';
+				'We could not send your request right now. Your entries are still here; please try again later or contact the EDA by email.';
 		} finally {
 			submitting = false;
 			submitButton.disabled = false;
-			submitButton.textContent = 'Request Voting Help';
+			submitButton.textContent = 'Find My Voting Location';
 			form.removeAttribute('aria-busy');
 		}
 	});

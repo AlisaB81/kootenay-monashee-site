@@ -271,8 +271,6 @@ textarea{resize:vertical;min-height:88px}
 .form-status.success{background:#eef8ee;border-color:#397a39;color:#245724}
 .consent-row{display:flex;align-items:flex-start;gap:.6rem}
 .consent-row input{margin-top:.3rem;flex:0 0 auto}
-.external-lookup{margin:2rem 0;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
-.external-lookup .btn{margin-top:.5rem}
 .draft-notice{padding:1rem;background:#fff4d6;border-left:4px solid var(--accent)}
 .muted{color:var(--muted);font-size:.9rem}
 
