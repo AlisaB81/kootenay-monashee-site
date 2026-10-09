@@ -179,7 +179,13 @@ document.addEventListener('DOMContentLoaded', function () {
 				method: 'POST',
 				body: data,
 				headers: { Accept: 'application/json' },
+				referrerPolicy: 'strict-origin-when-cross-origin',
 			});
+			if (response.status === 403) {
+				throw new Error(
+					'Formspree blocked the request. Check its authorized-domain and spam-protection settings.'
+				);
+			}
 			if (!response.ok) {
 				throw new Error('The submission service rejected the request.');
 			}
@@ -191,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		} catch {
 			status.classList.add('error');
 			status.textContent =
-				'We could not send your request right now. Your entries are still here; please try again later or contact the EDA by email.';
+				'We could not send your request. Your entries are still here. Please check the Formspree authorized-domain and spam-protection settings, then try again or contact the EDA by email.';
 		} finally {
 			submitting = false;
 			submitButton.disabled = false;
