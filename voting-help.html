@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="referrer" content="no-referrer" />
+		<title>Voting Help — Kootenay-Monashee EDA</title>
+		<link rel="stylesheet" href="assets/css/style.css?v=5" />
+		<script src="assets/js/voting-help.js" defer></script>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<div class="branding">
+					<img src="assets/img/onebc-logo.png" alt="OneBC" class="logo" />
+					<h1 class="site-title">Kootenay-Monashee EDA</h1>
+				</div>
+				<button
+					class="nav-toggle"
+					aria-expanded="false"
+					aria-controls="site-nav"
+				>
+					Menu
+				</button>
+				<nav id="site-nav" class="site-nav" aria-label="Primary">
+					<ul>
+						<li><a class="btn" href="index.html">Home</a></li>
+						<li><a class="btn" href="voting-help.html" aria-current="page">Voting Help</a></li>
+						<li><a class="btn" href="volunteer.html">Volunteer</a></li>
+						<li><a class="btn primary" href="donate.html">Donate</a></li>
+						<li>
+							<a
+								class="btn membership"
+								href="https://1bc.ca/candidates/stephen-hill"
+								target="_blank"
+								rel="noopener noreferrer"
+								>OneBC</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="container">
+			<h2>Need help finding where to vote?</h2>
+			<p>
+				Not sure where to vote? Fill out the form below and our local EDA team
+				can help you find your voting information.
+			</p>
+			<p>
+				This service is provided by the Kootenay–Monashee OneBC Electoral
+				District Association (EDA). This website is not operated by Elections
+				BC.
+			</p>
+			<p class="form-status" role="status" aria-live="polite">
+				Submitting this form sends your information to Formspree for processing
+				and delivery as configured by the EDA. Review the
+				<a href="privacy.html">privacy notice draft</a> before submitting.
+			</p>
+
+			<form
+				id="voting-help-form"
+				class="form"
+				data-endpoint="https://formspree.io/f/mljgbzwr"
+				novalidate
+			>
+				<div class="form-grid">
+					<div class="form-row">
+						<label for="firstName">First name <span aria-hidden="true">*</span></label>
+						<input
+							id="firstName"
+							name="firstName"
+							type="text"
+							autocomplete="given-name"
+							required
+							aria-describedby="firstName-error"
+						/>
+						<p id="firstName-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="lastName">Last name <span aria-hidden="true">*</span></label>
+						<input
+							id="lastName"
+							name="lastName"
+							type="text"
+							autocomplete="family-name"
+							required
+							aria-describedby="lastName-error"
+						/>
+						<p id="lastName-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="email">Email</label>
+						<input
+							id="email"
+							name="email"
+							type="email"
+							autocomplete="email"
+							inputmode="email"
+							aria-describedby="email-error contact-error"
+						/>
+						<p id="email-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="phone">Phone</label>
+						<input
+							id="phone"
+							name="phone"
+							type="tel"
+							autocomplete="tel"
+							inputmode="tel"
+							aria-describedby="phone-hint phone-error contact-error"
+						/>
+						<p id="phone-hint" class="muted">
+							Canadian numbers such as 250-555-0123 or +1 (250) 555-0123.
+						</p>
+						<p id="phone-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="address">Street address <span aria-hidden="true">*</span></label>
+						<input
+							id="address"
+							name="address"
+							type="text"
+							autocomplete="address-line1"
+							required
+							aria-describedby="address-error"
+						/>
+						<p id="address-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="city">City <span aria-hidden="true">*</span></label>
+						<input
+							id="city"
+							name="city"
+							type="text"
+							autocomplete="address-level2"
+							required
+							aria-describedby="city-error"
+						/>
+						<p id="city-error" class="validation-message" hidden></p>
+					</div>
+					<div class="form-row">
+						<label for="postalCode">Postal code <span aria-hidden="true">*</span></label>
+						<input
+							id="postalCode"
+							name="postalCode"
+							type="text"
+							autocomplete="postal-code"
+							autocapitalize="characters"
+							required
+							aria-describedby="postalCode-hint postalCode-error"
+						/>
+						<p id="postalCode-hint" class="muted">
+							For example, V1A 1A1 or V1A1A1.
+						</p>
+						<p id="postalCode-error" class="validation-message" hidden></p>
+					</div>
+				</div>
+
+				<p id="contact-error" class="validation-message" hidden>
+					Enter an email address, a phone number, or both so our team can
+					contact you.
+				</p>
+
+				<div class="form-row">
+					<label class="consent-row" for="campaignUpdatesConsent">
+						<input
+							id="campaignUpdatesConsent"
+							name="campaignUpdatesConsent"
+							type="checkbox"
+							value="true"
+						/>
+						<span
+							>I would also like to receive campaign news and updates from the
+							Kootenay–Monashee OneBC EDA.</span
+						>
+					</label>
+				</div>
+
+				<input type="hidden" name="submittedAt" value="" />
+				<input type="hidden" name="source" value="voting-help-page" />
+				<input type="hidden" name="campaignUpdatesConsentWording" value="I would also like to receive campaign news and updates from the Kootenay–Monashee OneBC EDA." />
+				<input type="hidden" name="campaignUpdatesConsentVersion" value="1" />
+
+				<div class="visually-hidden" aria-hidden="true">
+					<label for="website">Leave this field blank</label>
+					<input
+						id="website"
+						name="_gotcha"
+						type="text"
+						tabindex="-1"
+						autocomplete="off"
+					/>
+				</div>
+
+				<p>
+					Your information will be sent to the Kootenay–Monashee OneBC EDA
+					team to respond to your voting-help request.
+				</p>
+				<p>
+					See our <a href="privacy.html">privacy notice (draft for review)</a>.
+				</p>
+				<div class="form-actions">
+					<button id="voting-help-submit" type="submit" class="btn primary">
+						Request Voting Help
+					</button>
+				</div>
+				<p id="voting-help-status" class="form-status" role="status" aria-live="polite" hidden></p>
+			</form>
+
+			<section class="external-lookup" aria-labelledby="self-lookup-title">
+				<h3 id="self-lookup-title">Prefer to look it up yourself?</h3>
+				<p>Find your voting location directly through Elections BC—no form required.</p>
+				<a
+					class="btn primary"
+					href="https://wheretovote.elections.bc.ca/"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Find My Voting Location</a
+				>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p>
+					Contact:
+					<a href="mailto:stephen.hill@1bc.ca">stephen.hill@1bc.ca</a>
+				</p>
+				<p>&copy; <span id="year-2"></span> Kootenay-Monashee EDA.</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/main.js" defer></script>
+	</body>
+</html>

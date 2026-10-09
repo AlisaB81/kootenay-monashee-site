@@ -244,6 +244,8 @@ body{
   box-shadow:0 6px 18px rgba(15,18,46,0.04);
 }
 .form-row{margin-bottom:1rem;display:flex;flex-direction:column;gap:.35rem}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem}
+.form-grid .form-row{min-width:0}
 .form label{font-weight:600;font-size:.95rem;margin:0;color:var(--primary)}
 .form input[type="text"],
 .form input[type="email"],
@@ -261,6 +263,17 @@ body{
 textarea{resize:vertical;min-height:88px}
 .form-actions{display:flex;gap:.5rem;margin-top:1rem;justify-content:flex-end;flex-wrap:wrap}
 .form-actions .btn{min-width:92px}
+.form button:disabled{opacity:.65;cursor:wait}
+.form input[aria-invalid="true"]{border-color:#a32121}
+.validation-message{margin:0;color:#8b1e1e;font-size:.9rem}
+.form-status{padding:.75rem 1rem;border-radius:6px;background:#fff4d6;border:1px solid #d1a45d}
+.form-status.error{background:#fff0f0;border-color:#a32121;color:#761818}
+.form-status.success{background:#eef8ee;border-color:#397a39;color:#245724}
+.consent-row{display:flex;align-items:flex-start;gap:.6rem}
+.consent-row input{margin-top:.3rem;flex:0 0 auto}
+.external-lookup{margin:2rem 0;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.external-lookup .btn{margin-top:.5rem}
+.draft-notice{padding:1rem;background:#fff4d6;border-left:4px solid var(--accent)}
 .muted{color:var(--muted);font-size:.9rem}
 
 /* Fieldset / role options */
@@ -384,6 +397,7 @@ a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(209,164,9
 
   /* Form / modal padding and buttons on small screens */
   .form{padding:1rem}
+  .form-grid{grid-template-columns:1fr}
   .form-actions{justify-content:center}
   .form-actions .btn{width:100%}
   .role-options label{display:block;margin-right:0}
