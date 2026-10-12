@@ -140,6 +140,20 @@ body{
 /* President section */
 .president{margin:2.5rem 0}
 .candidate{margin:2.5rem 0}
+.endorsements{margin:2.5rem 0}
+.endorsement-card{
+  margin:0;
+  padding:1.25rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(15,18,46,0.04);
+}
+.endorsement-card blockquote{margin:0;color:var(--primary);font-size:1.05rem;line-height:1.6}
+.endorsement-card blockquote p{margin:0}
+.endorsement-card figcaption{margin-top:.75rem;font-weight:700}
+.endorsement-card figcaption span{display:block;color:var(--muted);font-size:.9rem;font-weight:400}
 
 /* Card layout */
 .president-card,
