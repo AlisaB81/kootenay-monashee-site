@@ -176,6 +176,11 @@ body{
   color:var(--primary);
 }
 
+/* Keep the homepage text cards visually consistent with the endorsement accent. */
+.mission-card,
+.candidate-card,
+.event-card{border-left:3px solid var(--accent)}
+
 /* Photo container */
 .president-photo,
 .candidate-photo{
