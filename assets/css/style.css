@@ -143,16 +143,23 @@ body{
 .endorsements{margin:2.5rem 0}
 .endorsement-card{
   margin:0;
-  padding:1.25rem;
+  padding:1.5rem;
   background:var(--surface);
   border:1px solid var(--border);
-  border-left:4px solid var(--accent);
-  border-radius:8px;
-  box-shadow:0 6px 18px rgba(15,18,46,0.04);
+  border-radius:10px;
+  color:var(--primary);
+  box-shadow:0 6px 18px rgba(15,18,46,0.06);
 }
-.endorsement-card blockquote{margin:0;color:var(--primary);font-size:1.05rem;line-height:1.6}
+.endorsement-card blockquote{
+  margin:0;
+  padding-left:1rem;
+  border-left:3px solid var(--accent);
+  color:var(--primary);
+  font-size:1.05rem;
+  line-height:1.6;
+}
 .endorsement-card blockquote p{margin:0}
-.endorsement-card figcaption{margin-top:.75rem;font-weight:700}
+.endorsement-card figcaption{margin:1rem 0 0 1rem;font-weight:700}
 .endorsement-card figcaption span{display:block;color:var(--muted);font-size:.9rem;font-weight:400}
 
 /* Card layout */
@@ -207,6 +214,8 @@ body{
     grid-template-columns:1fr;
     text-align:center;
   }
+
+  .endorsement-card{padding:1rem}
 
   .president-photo,
   .candidate-photo{
