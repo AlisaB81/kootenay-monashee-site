@@ -132,9 +132,15 @@ body{
 .mission-card{background:var(--surface);padding:1.25rem;border-radius:10px;border:1px solid var(--border);color:var(--primary);box-shadow:0 6px 18px rgba(15,18,46,0.06)}
 .mission-card h4{margin:0.6rem 0 0.3rem;font-size:1rem}
 .mission-card p{margin:0.3rem 0;line-height:1.6;color:var(--primary)}
+.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.platform-topic{min-width:0}
+.platform-topic h4{font-size:1.1rem}
+.platform-topic ul{margin:.5rem 0 0;padding-left:1.25rem;line-height:1.6}
+.platform-topic li+li{margin-top:.25rem}
 
 @media (max-width:720px){
   .mission-card{padding:1rem}
+  .platform-grid{grid-template-columns:1fr}
 }
 
 /* President section */
